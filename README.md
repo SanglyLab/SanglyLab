@@ -1,6 +1,6 @@
-# Srinivas Lab — Research Website
+# Sangly Lab — Research Website
 
-Website for the **Srinivas Lab** (Corneal Physiology & Ocular Drug Delivery),
+Website for the **Sangly Lab** (Corneal Physiology & Ocular Drug Delivery),
 led by **Prof. Sangly P. Srinivas**, Indiana University Bloomington, School of Optometry.
 
 A single-page, dependency-free static site built for **GitHub Pages**.

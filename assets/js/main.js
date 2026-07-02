@@ -13,6 +13,20 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- email links assembled at runtime (address never appears in page source) ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".js-email"), function (el) {
+    var user = el.getAttribute("data-user");
+    var domain = el.getAttribute("data-domain");
+    if (!user || !domain) return;
+    var href = "mailto:" + user + String.fromCharCode(64) + domain;
+    var subject = el.getAttribute("data-subject");
+    if (subject) href += "?subject=" + encodeURIComponent(subject);
+    el.setAttribute("href", href);
+    el.removeAttribute("data-user");
+    el.removeAttribute("data-domain");
+    el.removeAttribute("data-subject");
+  });
+
   /* ---------- sticky header shadow ---------- */
   var header = document.getElementById("siteHeader");
   var onScroll = function () {

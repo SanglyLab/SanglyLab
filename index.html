@@ -3,6 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a1417" />
+  <script>
+    /* apply the saved theme before first paint to avoid a flash — dark is the default */
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
   <title>SP Lab · Corneal Physiology &amp; Ocular Drug Delivery — Indiana University</title>
   <meta name="description" content="The SP Lab at the Indiana University School of Optometry studies corneal endothelial barrier physiology, Fuchs dystrophy, aqueous humor outflow, and ocular drug delivery. Led by Prof. Sangly P. Srinivas." />
   <meta name="author" content="Sangly P. Srinivas" />
@@ -73,6 +85,15 @@
           <li><a href="#people">People</a></li>
           <li><a class="nav-cta" href="#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle light / dark">
+          <svg class="ic ic-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2.4v2.7M12 18.9v2.7M4.4 4.4l1.9 1.9M17.7 17.7l1.9 1.9M2.4 12h2.7M18.9 12h2.7M4.4 19.6l1.9-1.9M17.7 6.3l1.9-1.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="ic ic-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.7A8.2 8.2 0 1 1 9.3 3.5a6.4 6.4 0 0 0 11.2 11.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>

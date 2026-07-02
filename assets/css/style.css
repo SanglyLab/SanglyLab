@@ -22,6 +22,9 @@
   --cyan:       #1fb2bd;
   --cyan-soft:  #e2f4f4;
   --crimson:    #8a1f2b;      /* Indiana University institutional nod, used sparingly */
+  --mosaic:     #0e7c84;      /* hero endothelial-mosaic tint (SVG currentColor) */
+
+  color-scheme: light;
 
   --shadow-sm:  0 1px 2px rgba(12,28,34,.05), 0 2px 6px rgba(12,28,34,.04);
   --shadow-md:  0 4px 14px rgba(12,28,34,.07), 0 10px 30px rgba(12,28,34,.06);
@@ -393,4 +396,92 @@ strong, b { color: var(--ink-2); font-weight: 600; }
   .hero-veil { display: none; }
   .join { flex-direction: column; align-items: flex-start; }
   .footer-legal { flex-direction: column; gap: 6px; }
+}
+
+/* =====================================================================
+   THEME TOGGLE + DARK MODE  (dark is the default)
+   ===================================================================== */
+
+.theme-toggle {
+  order: 1; flex: 0 0 auto; margin-left: 10px;
+  display: inline-grid; place-items: center; width: 40px; height: 40px;
+  background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--line-2); border-radius: 10px; cursor: pointer;
+  transition: color .18s var(--ease), border-color .18s var(--ease),
+              background .18s var(--ease), transform .18s var(--ease);
+}
+.theme-toggle:hover { color: var(--teal); border-color: var(--teal); background: var(--bg-warm); transform: translateY(-1px); }
+.theme-toggle .ic { width: 20px; height: 20px; }
+.theme-toggle .ic-sun { display: none; }
+.theme-toggle .ic-moon { display: block; }
+:root[data-theme="dark"] .theme-toggle .ic-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
+
+/* hero mosaic follows the theme accent (SVG polygons use currentColor) */
+.hero-mosaic { color: var(--mosaic); }
+
+/* -------- dark theme tokens -------- */
+:root[data-theme="dark"] {
+  --ink:      #e9f1f0;
+  --ink-2:    #cfdddb;
+  --ink-soft: #a7bcba;
+  --muted:    #7c9391;
+  --line:     #1c2b2f;
+  --line-2:   #294044;
+  --bg:       #0a1417;
+  --bg-warm:  #0e1c20;
+  --bg-deep:  #060f11;
+  --cyan-soft:#102f34;
+  --crimson:  #d1626b;
+  --mosaic:   #1c9aa3;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.34), 0 2px 6px rgba(0,0,0,.28);
+  --shadow-md: 0 6px 18px rgba(0,0,0,.40), 0 12px 34px rgba(0,0,0,.32);
+  --shadow-lg: 0 14px 44px rgba(0,0,0,.5);
+  color-scheme: dark;
+}
+
+/* -------- dark theme component overrides -------- */
+:root[data-theme="dark"] a { color: #4bccd7; }
+:root[data-theme="dark"] a:hover { color: #86e3ea; }
+
+:root[data-theme="dark"] .site-header { background: rgba(9,18,21,.82); }
+
+:root[data-theme="dark"] .hero {
+  background:
+    radial-gradient(1200px 600px at 82% -8%, #103138 0%, rgba(16,49,56,0) 62%),
+    linear-gradient(180deg, #0b191d 0%, #0a1417 74%);
+}
+:root[data-theme="dark"] .hero-veil {
+  background: linear-gradient(95deg, #0a1417 30%, rgba(10,20,23,.72) 46%, rgba(10,20,23,0) 66%);
+}
+
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .section-kicker,
+:root[data-theme="dark"] .timeline h4,
+:root[data-theme="dark"] .contact-card dt,
+:root[data-theme="dark"] .stat-num .plus,
+:root[data-theme="dark"] .pub-year { color: #3fc6d1; }
+
+:root[data-theme="dark"] .nav-cta { background: var(--teal) !important; }
+
+:root[data-theme="dark"] .btn-ghost:hover { color: #4bccd7; border-color: var(--teal); }
+
+:root[data-theme="dark"] .card-icon,
+:root[data-theme="dark"] .about-tags span,
+:root[data-theme="dark"] .pub-tag { color: #58d2db; }
+:root[data-theme="dark"] .about-tags span { border-color: #1e454c; }
+:root[data-theme="dark"] .card:hover { border-color: #205057; }
+
+:root[data-theme="dark"] .method-list li:hover,
+:root[data-theme="dark"] .pub:hover { background: #10242a; }
+
+:root[data-theme="dark"] .pi-mono {
+  background: radial-gradient(circle at 50% 40%, #123840, #0c232b);
+  color: #58d2db;
+}
+:root[data-theme="dark"] .pi-portrait .pi-hex { color: #2ba5ae; }
+
+@media (max-width: 720px) {
+  .theme-toggle { order: -1; margin-left: 0; margin-right: 8px; }
+  :root[data-theme="dark"] .nav-list { background: rgba(9,18,21,.98); }
 }

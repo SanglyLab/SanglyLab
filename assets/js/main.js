@@ -27,6 +27,18 @@
     el.removeAttribute("data-subject");
   });
 
+  /* ---------- theme toggle (dark is the default) ---------- */
+  var themeToggle = document.getElementById("themeToggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      var next = cur === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      themeToggle.setAttribute("aria-label", next === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    });
+  }
+
   /* ---------- sticky header shadow ---------- */
   var header = document.getElementById("siteHeader");
   var onScroll = function () {
@@ -123,7 +135,7 @@
         var poly = document.createElementNS(svgNS, "polygon");
         poly.setAttribute("points", hexPoints(cx, cy, R * 0.94));
         poly.setAttribute("fill", "none");
-        poly.setAttribute("stroke", "#0e7c84");
+        poly.setAttribute("stroke", "currentColor");
         poly.setAttribute("stroke-width", "1.4");
         poly.setAttribute("stroke-opacity", (0.16 * op).toFixed(3));
         svg.appendChild(poly);
@@ -133,7 +145,7 @@
         if (edge > 0.35 && seed > 0.82) {
           var fill = document.createElementNS(svgNS, "polygon");
           fill.setAttribute("points", hexPoints(cx, cy, R * 0.78));
-          fill.setAttribute("fill", seed > 0.93 ? "#1fb2bd" : "#0e7c84");
+          fill.setAttribute("fill", "currentColor");
           fill.setAttribute("fill-opacity", (0.05 + 0.07 * op).toFixed(3));
           svg.appendChild(fill);
           cells.push(fill);

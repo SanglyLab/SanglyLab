@@ -35,7 +35,7 @@
       var cur = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
       var next = cur === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("theme", next); } catch (e) {}
+      try { localStorage.setItem("theme-v2", next); } catch (e) {}
       updateThemeToggle(next);
     });
   }

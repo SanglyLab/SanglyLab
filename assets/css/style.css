@@ -412,10 +412,7 @@ strong, b { color: var(--ink-2); font-weight: 600; }
 }
 .theme-toggle:hover { color: var(--teal); border-color: var(--teal); background: var(--bg-warm); transform: translateY(-1px); }
 .theme-toggle .ic { width: 20px; height: 20px; }
-.theme-toggle .ic-sun { display: none; }
-.theme-toggle .ic-moon { display: block; }
-:root[data-theme="dark"] .theme-toggle .ic-sun { display: block; }
-:root[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
+.theme-toggle .ic.is-hidden { display: none; }
 
 /* hero mosaic follows the theme accent (SVG polygons use currentColor) */
 .hero-mosaic { color: var(--mosaic); }

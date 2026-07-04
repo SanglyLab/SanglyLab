@@ -30,13 +30,24 @@
   /* ---------- theme toggle (dark is the default) ---------- */
   var themeToggle = document.getElementById("themeToggle");
   if (themeToggle) {
+    updateThemeToggle(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark");
     themeToggle.addEventListener("click", function () {
       var cur = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
       var next = cur === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
-      themeToggle.setAttribute("aria-label", next === "dark" ? "Switch to light theme" : "Switch to dark theme");
+      updateThemeToggle(next);
     });
+  }
+
+  function updateThemeToggle(theme) {
+    if (!themeToggle) return;
+    var isDark = theme === "dark";
+    var sun = themeToggle.querySelector(".ic-sun");
+    var moon = themeToggle.querySelector(".ic-moon");
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    if (sun) sun.classList.toggle("is-hidden", !isDark);
+    if (moon) moon.classList.toggle("is-hidden", isDark);
   }
 
   /* ---------- sticky header shadow ---------- */

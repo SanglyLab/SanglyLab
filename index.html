@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a1417" />
+  <script>
+    /* apply the saved theme before first paint to avoid a flash — dark is the default */
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <title>SP Lab · Corneal Physiology &amp; Ocular Drug Delivery — Indiana University</title>
+  <meta name="description" content="The SP Lab at the Indiana University School of Optometry studies corneal endothelial barrier physiology, Fuchs dystrophy, aqueous humor outflow, and ocular drug delivery. Led by Prof. Sangly P. Srinivas." />
+  <meta name="author" content="Sangly P. Srinivas" />
+  <link rel="canonical" href="https://sanglylab.github.io/sanglylab/" />
+
+  <!-- Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SP Lab · Corneal Physiology & Ocular Drug Delivery" />
+  <meta property="og:description" content="Corneal endothelial physiology, Fuchs dystrophy, aqueous humor outflow, and ocular drug delivery at Indiana University School of Optometry." />
+  <meta property="og:url" content="https://sanglylab.github.io/sanglylab/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 7v14l-12 7L4 23V9z' fill='none' stroke='%230e7c84' stroke-width='2.5' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='16' r='4.4' fill='%230e7c84'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sangly P. Srinivas",
+    "alternateName": "S. P. Srinivas",
+    "jobTitle": "Professor",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Indiana University Bloomington, School of Optometry"
+    },
+    "url": "https://sanglylab.github.io/sanglylab/",
+    "alumniOf": ["Drexel University", "Stanford University", "University of California, Berkeley"],
+    "knowsAbout": ["Corneal endothelium", "Ocular drug delivery", "Fuchs endothelial corneal dystrophy", "Aqueous humor outflow", "Ocular fluorophotometry", "Cell signaling"],
+    "sameAs": ["https://scholar.google.com/citations?user=t7qIyxcAAAAJ&hl=en"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="SP Lab home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30">
+            <path d="M16 2.5l11.7 6.75v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="4.2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>SP Lab</strong>
+          <em>Corneal Physiology &amp; Ocular Drug Delivery</em>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#methods">Methods</a></li>
+          <li><a href="#pi">Principal Investigator</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle light / dark">
+          <svg class="ic ic-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2.4v2.7M12 18.9v2.7M4.4 4.4l1.9 1.9M17.7 17.7l1.9 1.9M2.4 12h2.7M18.9 12h2.7M4.4 19.6l1.9-1.9M17.7 6.3l1.9-1.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="ic ic-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.7A8.2 8.2 0 1 1 9.3 3.5a6.4 6.4 0 0 0 11.2 11.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-mosaic" id="heroMosaic" aria-hidden="true"></div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Indiana University Bloomington · School of Optometry</p>
+          <h1>Keeping the cornea<br><span class="accent">clear</span> — and delivering<br>medicine to the eye.</h1>
+          <p class="lede">
+            The SP Lab investigates how the <strong>corneal endothelium</strong> maintains
+            the transparency of the eye, why that barrier fails in disease, and how
+            <strong>drugs can be delivered</strong> across the ocular surface. We work at the
+            interface of cell physiology, ocular pharmacology, and biomedical engineering.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research">Explore our research</a>
+            <a class="btn btn-ghost" href="#publications">Selected publications</a>
+          </div>
+
+          <ul class="stat-band" aria-label="Lab at a glance">
+            <li><span class="stat-num">4,400<span class="plus">+</span></span><span class="stat-label">Citations · Google Scholar</span></li>
+            <li><span class="stat-num">3<span class="plus"> decades</span></span><span class="stat-label">Corneal &amp; ocular research</span></li>
+            <li><span class="stat-num">6</span><span class="stat-label">Core research programs</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-caption" aria-hidden="true">The hexagonal mosaic of the corneal endothelium</div>
+    </section>
+
+    <!-- ============ ABOUT / MISSION ============ -->
+    <section class="section about" id="about">
+      <div class="wrap grid-2">
+        <div class="about-lead">
+          <p class="section-kicker">The Lab</p>
+          <h2>A quantitative view of the ocular surface.</h2>
+        </div>
+        <div class="about-body">
+          <p>
+            A single layer of hexagonal cells — the <strong>corneal endothelium</strong> — pumps fluid
+            out of the cornea and holds a leaky barrier just tight enough to keep it transparent.
+            When that balance breaks, the cornea swells and vision clouds. Our lab asks how the
+            balance is held, how inflammation, oxidative stress, and hypothermia break it, and how
+            it can be restored with drugs.
+          </p>
+          <p>
+            In parallel, we tackle a second problem that decides whether any eye medicine works at
+            all: <strong>getting the drug to its target</strong>. We design mucoadhesive nanoparticle
+            carriers for the ocular surface, model how molecules penetrate the cornea, and measure
+            the barrier itself with custom fluorophotometry and impedance sensing.
+          </p>
+          <p class="about-tags">
+            <span>Corneal endothelium</span>
+            <span>Fuchs dystrophy</span>
+            <span>Ocular drug delivery</span>
+            <span>Aqueous humor outflow</span>
+            <span>Cell signaling</span>
+            <span>Fluorophotometry</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section section-alt" id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Research Programs</p>
+          <h2>Six questions at the heart of corneal &amp; ocular science.</h2>
+          <p class="section-intro">
+            Our work spans the physiology of the anterior segment of the eye — from the molecular
+            signaling that governs the endothelial barrier to the engineering of drug-delivery
+            systems and the instruments that measure them.
+          </p>
+        </div>
+
+        <div class="cards research-grid">
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M14 8h9l4.5 8-4.5 8h-9L9.5 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M25 24h9l4.5 8-4.5 8h-9L20.5 32z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M14 24h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Barrier Integrity of the Corneal Endothelium</h3>
+            <p>
+              Tight junctions and the perijunctional actomyosin ring (PAMR) restrain fluid leak into
+              the stroma. We dissect how TNF-α, thrombin, and histamine remodel the actin cytoskeleton
+              through Rho-GTPase, p38&nbsp;MAP&nbsp;kinase, and myosin-light-chain signaling to break down
+              the barrier — and how it can be pharmacologically rescued.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M24 6l15 8.7v17.6L24 41 9 32.3V14.7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 24l3.5-3.5M24 24l-4 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Fuchs Dystrophy &amp; Oxidative Stress</h3>
+            <p>
+              Oxidative stress is a hallmark of Fuchs endothelial corneal dystrophy (FECD). Using
+              cultured endothelia and donor tissue, we show how reactive oxygen species dismantle
+              microtubules, the PAMR, and tight junctions — and test antioxidants and p38&nbsp;MAPK
+              inhibition as routes to protect endothelial function.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M6 24s7-11 18-11 18 11 18 11-7 11-18 11S6 24 6 24z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M40 20l4-2M40 28l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Aqueous Humor Outflow &amp; the Trabecular Meshwork</h3>
+            <p>
+              Intraocular pressure is set by the resistance of the trabecular meshwork to aqueous
+              humor outflow. We study how the contractile tone and signaling of trabecular meshwork
+              cells regulate outflow — informing new strategies for lowering pressure in glaucoma.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M24 6c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="21" cy="26" r="1.6" fill="currentColor"/>
+                <circle cx="27" cy="23" r="1.6" fill="currentColor"/>
+                <circle cx="26" cy="30" r="1.6" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Ocular Drug Delivery &amp; Pharmacokinetics</h3>
+            <p>
+              Crossing the tear film and cornea is the central challenge of ophthalmic therapeutics.
+              We engineer mucoadhesive silk-fibroin and PLGA nanoparticles for sustained delivery to
+              the ocular surface, model corneal drug penetration, and probe the toxicity of
+              preservatives such as benzalkonium chloride (BAK).
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 24h6M38 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 34c3-4 5-4 6 0s3 4 6 0 5-4 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 -20)"/>
+              </svg>
+            </div>
+            <h3>Ocular Fluorophotometry &amp; Imaging</h3>
+            <p>
+              Building on a lineage of corneal fluorophotometry, we develop high-speed, multi-modal
+              ocular fluorometers and quantitative imaging — including deep-learning segmentation of
+              specular-microscopy images — to measure barrier function, endothelial morphology, and
+              anterior-chamber inflammation in patients and animal models.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M8 30s6-9 16-9 16 9 16 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 8v11M18 12l12 6M30 12l-12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 38h24" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+              </svg>
+            </div>
+            <h3>Corneal Preservation for Transplantation</h3>
+            <p>
+              Donor corneas deteriorate during cold storage before transplantation. We characterize
+              how hypothermia and oxidative stress damage the endothelial cytoskeleton and barrier,
+              and test microtubule-stabilizing agents and antioxidant additives to keep grafts
+              healthier for longer.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METHODS / INSTRUMENTATION ============ -->
+    <section class="section methods" id="methods">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Methods &amp; Instrumentation</p>
+          <h2>An engineer's toolkit for the eye.</h2>
+          <p class="section-intro">
+            A chemical-engineering foundation shapes how we measure biology — combining real-time
+            biophysics, quantitative imaging, and materials fabrication under one roof.
+          </p>
+        </div>
+
+        <ul class="method-list">
+          <li class="reveal">
+            <h4>Electric Cell–substrate Impedance Sensing (ECIS)</h4>
+            <p>Real-time transendothelial resistance to track barrier make-and-break as it happens.</p>
+          </li>
+          <li class="reveal">
+            <h4>Confocal Microfluorometry</h4>
+            <p>Custom fluorometers that resolve drug and dye penetration across the intact cornea.</p>
+          </li>
+          <li class="reveal">
+            <h4>Quantitative Immunocytochemistry &amp; Live-Cell Imaging</h4>
+            <p>PAMR, ZO-1, and microtubule architecture; intracellular Ca²⁺ and pH dynamics.</p>
+          </li>
+          <li class="reveal">
+            <h4>Nanoparticle Engineering</h4>
+            <p>Silk-fibroin, PLGA, and metal nanoparticles for mucoadhesion and controlled release.</p>
+          </li>
+          <li class="reveal">
+            <h4>Machine Learning &amp; Image Analysis</h4>
+            <p>Deep-learning segmentation of the endothelium and automated grading of barrier damage.</p>
+          </li>
+          <li class="reveal">
+            <h4>Primary Cell-Culture Models</h4>
+            <p>Bovine, porcine, and human corneal endothelial and epithelial monolayers.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PRINCIPAL INVESTIGATOR ============ -->
+    <section class="section section-alt pi" id="pi">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Principal Investigator</p>
+          <h2>Sangly P. Srinivas, Ph.D.</h2>
+        </div>
+
+        <div class="pi-grid">
+          <aside class="pi-card">
+            <div class="pi-portrait" aria-hidden="true">
+              <span class="pi-mono">SPS</span>
+              <svg class="pi-hex" viewBox="0 0 200 200"><path d="M100 8l80 46v92l-80 46-80-46V54z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+            </div>
+            <p class="pi-name">Sangly P. Srinivas</p>
+            <p class="pi-role">Professor · School of Optometry<br>Indiana University Bloomington</p>
+            <ul class="pi-links">
+              <li><a href="https://scholar.google.com/citations?user=t7qIyxcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></li>
+              <li><a href="https://optometry.iu.edu/people-directory/srinivas-sp.html" target="_blank" rel="noopener">IU Faculty Profile ↗</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Srinivas+SP%5BAuthor%5D+cornea" target="_blank" rel="noopener">PubMed ↗</a></li>
+              <li><a class="js-email" data-user="srinivas" data-domain="iu.edu" href="#">Email Prof. Srinivas</a></li>
+            </ul>
+          </aside>
+
+          <div class="pi-body">
+            <p>
+              <strong>Sangly P. Srinivas</strong> is a Professor in the School of Optometry at Indiana
+              University Bloomington, where he leads a research program at the intersection of corneal
+              cell physiology, ocular pharmacology, and drug delivery. Trained as a chemical engineer,
+              he brings a quantitative, transport-and-signaling perspective to the biology of the
+              ocular surface and anterior segment.
+            </p>
+            <p>
+              He earned his <strong>Ph.D. in Chemical Engineering from Drexel University (1987)</strong>,
+              then completed postdoctoral training at <strong>Stanford University</strong> — in ocular
+              drug delivery, working with the pioneering corneal physiologist David&nbsp;M.&nbsp;Maurice —
+              and at the <strong>University of California, Berkeley</strong>, in corneal physiology. That
+              lineage runs directly into the lab's tools today, from corneal fluorophotometry to the
+              biophysics of the endothelial barrier.
+            </p>
+            <p>
+              His research addresses (1) regulation of the barrier integrity of the corneal endothelium,
+              (2) regulation of aqueous humor outflow by trabecular meshwork cells, and (3) the
+              pharmacokinetics of topical drugs to the eye — with an emphasis on the pathophysiology and
+              treatment of endothelial disorders, including Fuchs endothelial corneal dystrophy, and on
+              high-speed, multi-modal ocular fluorometers for measurements in humans and animal models.
+              As a member of the graduate faculty, he mentors doctoral students in the Vision Science
+              program and collaborates with groups across the United States, India, Japan, and Thailand.
+            </p>
+
+            <div class="timeline">
+              <h4>Education &amp; Training</h4>
+              <ol>
+                <li><span class="tl-dot"></span><div><strong>Ph.D., Chemical Engineering</strong><em>Drexel University · 1987</em></div></li>
+                <li><span class="tl-dot"></span><div><strong>Postdoctoral Fellow — Ocular Drug Delivery</strong><em>Stanford University (with D. M. Maurice)</em></div></li>
+                <li><span class="tl-dot"></span><div><strong>Postdoctoral Fellow — Corneal Physiology</strong><em>University of California, Berkeley</em></div></li>
+                <li><span class="tl-dot"></span><div><strong>Professor · Graduate Faculty</strong><em>Indiana University School of Optometry · present</em></div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section publications" id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Selected Publications</p>
+          <h2>Three decades of corneal &amp; ocular research.</h2>
+          <p class="section-intro">
+            A representative selection across the lab's themes. Publication metadata is drawn from
+            PubMed and Google Scholar; each entry links to its DOI or PubMed record. For the complete,
+            up-to-date list, see <a href="https://scholar.google.com/citations?user=t7qIyxcAAAAJ&hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a>.
+          </p>
+        </div>
+
+        <ol class="pub-list" id="pubList">
+          <li class="pub reveal">
+            <span class="pub-year">2025</span>
+            <div class="pub-meta">
+              <p class="pub-title">Effects of Benzalkonium Chloride, a Preservative in Topical Drugs, on the Barrier Function of Human Corneal Epithelial Cells</p>
+              <p class="pub-authors">Zheng X, Shawky M, Ogando DG, Nishiyama M, Ibrahim AS, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Translational Vision Science &amp; Technology</em> · 14(11):16 · <a href="https://doi.org/10.1167/tvst.14.11.16" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Drug delivery</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2025</span>
+            <div class="pub-meta">
+              <p class="pub-title">Mucoadhesive Silk Fibroin Nanoparticles for Drug Delivery to the Ocular Surface</p>
+              <p class="pub-authors">Srikajorn C, Tiyaboonchai W, <b>Srinivas SP</b>, Thongsuk W.</p>
+              <p class="pub-venue"><em>Journal of Ocular Pharmacology and Therapeutics</em> · 41(7):378–386 · <a href="https://doi.org/10.1089/jop.2024.0180" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Drug delivery</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2025</span>
+            <div class="pub-meta">
+              <p class="pub-title">In Vitro Antifungal Activity of Amphotericin B–Encapsulated Silk Fibroin–Chitosan Nanoparticles Against Isolates from Keratitis Patients</p>
+              <p class="pub-authors">Khotcharrat R, <b>Srinivas SP</b>, Thongsri Y, Thongsuk W.</p>
+              <p class="pub-venue"><em>Pharmaceutics</em> · 17(9):1170 · <a href="https://doi.org/10.3390/pharmaceutics17091170" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Drug delivery</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2023</span>
+            <div class="pub-meta">
+              <p class="pub-title">Grading the Severity of Damage to the Perijunctional Actomyosin Ring and Zonula Occludens-1 of the Corneal Endothelium by Ensemble Learning Methods</p>
+              <p class="pub-authors">Shilpashree PS, Ravi T, Thanuja MY, Anupama C, Ranganath SH, Suresh KV, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Journal of Ocular Pharmacology and Therapeutics</em> · <a href="https://doi.org/10.1089/jop.2022.0154" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Imaging &amp; ML</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2023</span>
+            <div class="pub-meta">
+              <p class="pub-title">Anterior Chamber Inflammation Grading Methods: A Critical Review</p>
+              <p class="pub-authors">Oo HH, Mohan M, Song W, Rojas-Carabali W, … <b>Srinivas SP</b>, … Agrawal R.</p>
+              <p class="pub-venue"><em>Survey of Ophthalmology</em> · 69(2):253–264 · <a href="https://doi.org/10.1016/j.survophthal.2023.10.005" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Fluorophotometry</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2022</span>
+            <div class="pub-meta">
+              <p class="pub-title">Experimental Oxidative Stress Breaks Down the Barrier Function of the Corneal Endothelium</p>
+              <p class="pub-authors">Anupama C, Shettar A, Ranganath SH, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Journal of Ocular Pharmacology and Therapeutics</em> · 39(1):70–79 · <a href="https://doi.org/10.1089/jop.2022.0093" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Fuchs / oxidative stress</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2022</span>
+            <div class="pub-meta">
+              <p class="pub-title">Role of Oxidative Stress in the Disruption of the Endothelial Apical Junctional Complex During Corneal Cold Storage</p>
+              <p class="pub-authors">Thanuja MY, Ranganath SH, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Journal of Ocular Pharmacology and Therapeutics</em> · 38(10):664–681 · <a href="https://doi.org/10.1089/jop.2022.0082" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Preservation</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2021</span>
+            <div class="pub-meta">
+              <p class="pub-title">Automated Image Segmentation of the Corneal Endothelium in Patients With Fuchs Dystrophy</p>
+              <p class="pub-authors">Shilpashree PS, Suresh KV, Sudhir RR, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Translational Vision Science &amp; Technology</em> · 10(13):27 · <a href="https://doi.org/10.1167/tvst.10.13.27" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Imaging &amp; ML</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2021</span>
+            <div class="pub-meta">
+              <p class="pub-title">Microtubule Stabilization Protects Hypothermia-Induced Damage to the Cytoskeleton and Barrier Integrity of the Corneal Endothelial Cells</p>
+              <p class="pub-authors">Thanuja MY, Suma BS, Dinesh D, Ranganath SH, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Journal of Ocular Pharmacology and Therapeutics</em> · 37(7):399–411 · <a href="https://doi.org/10.1089/jop.2021.0036" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Preservation</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2021</span>
+            <div class="pub-meta">
+              <p class="pub-title">Analysis of Immune Cells on Donor Corneal Endothelium After Corneal Transplantation Using the HRT-Rostock Cornea Module</p>
+              <p class="pub-authors">Okumura N, Velumani T, Hadiya F, … <b>Srinivas SP</b>, Koizumi N, Padmanabhan P.</p>
+              <p class="pub-venue"><em>Cornea</em> · 40(11):1445–1452 · <a href="https://doi.org/10.1097/ICO.0000000000002706" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Transplantation</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2014</span>
+            <div class="pub-meta">
+              <p class="pub-title">Role of MMP-9 in the Breakdown of Barrier Integrity of the Corneal Endothelium in Response to TNF-α</p>
+              <p class="pub-authors">Rajashekhar G, Shivanna M, Kompella UB, Wang Y, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Experimental Eye Research</em> · 122:77–85 · <a href="https://doi.org/10.1016/j.exer.2014.03.004" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Barrier signaling</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2011</span>
+            <div class="pub-meta">
+              <p class="pub-title">Cell Signaling in Regulation of the Barrier Integrity of the Corneal Endothelium</p>
+              <p class="pub-authors"><b>Srinivas SP</b>. <span class="pub-note">(invited review)</span></p>
+              <p class="pub-venue"><em>Experimental Eye Research</em> · 95(1):8–15 · <a href="https://doi.org/10.1016/j.exer.2011.09.009" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Barrier signaling</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2010</span>
+            <div class="pub-meta">
+              <p class="pub-title">Dynamic Regulation of Barrier Integrity of the Corneal Endothelium</p>
+              <p class="pub-authors"><b>Srinivas SP</b>. <span class="pub-note">(invited review)</span></p>
+              <p class="pub-venue"><em>Optometry and Vision Science</em> · 87(4):E239–E254 · <a href="https://doi.org/10.1097/OPX.0b013e3181d39464" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Barrier signaling</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2007</span>
+            <div class="pub-meta">
+              <p class="pub-title">Benzalkonium Chloride Induces Dephosphorylation of Myosin Light Chain in Cultured Corneal Epithelial Cells</p>
+              <p class="pub-authors">Guo Y, Satpathy M, Wilson G, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Investigative Ophthalmology &amp; Visual Science</em> · 48(5):2001–2008 · <a href="https://doi.org/10.1167/iovs.06-0613" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Drug delivery</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2004</span>
+            <div class="pub-meta">
+              <p class="pub-title">Thrombin-Induced Phosphorylation of the Regulatory Light Chain of Myosin II in Cultured Bovine Corneal Endothelial Cells</p>
+              <p class="pub-authors">Satpathy M, Gallagher P, Lizotte-Waniewski M, <b>Srinivas SP</b>.</p>
+              <p class="pub-venue"><em>Experimental Eye Research</em> · 79(4):477–486 · <a href="https://doi.org/10.1016/j.exer.2004.06.018" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Barrier signaling</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">2002</span>
+            <div class="pub-meta">
+              <p class="pub-title">Inhibition of Carbonic Anhydrase Activity in Cultured Bovine Corneal Endothelial Cells by Dorzolamide</p>
+              <p class="pub-authors"><b>Srinivas SP</b>, Ong A, Zhai CB, Bonanno JA.</p>
+              <p class="pub-venue"><em>Investigative Ophthalmology &amp; Visual Science</em> · 43(10):3273–3278 · <a href="https://pubmed.ncbi.nlm.nih.gov/12356834/" target="_blank" rel="noopener">PubMed</a></p>
+            </div>
+            <span class="pub-tag">Endothelial pump</span>
+          </li>
+
+          <li class="pub reveal">
+            <span class="pub-year">1992</span>
+            <div class="pub-meta">
+              <p class="pub-title">A Microfluorometer for Measuring Diffusion of Fluorophores Across the Cornea</p>
+              <p class="pub-authors"><b>Srinivas SP</b>, Maurice DM. <span class="pub-note">(Stanford University)</span></p>
+              <p class="pub-venue"><em>IEEE Transactions on Biomedical Engineering</em> · 39(12):1283–1291 · <a href="https://doi.org/10.1109/10.184704" target="_blank" rel="noopener">DOI</a></p>
+            </div>
+            <span class="pub-tag">Fluorophotometry</span>
+          </li>
+        </ol>
+
+        <p class="pub-attrib">
+          Bibliographic data sourced from <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Srinivas+SP%5BAuthor%5D+cornea" target="_blank" rel="noopener">PubMed</a>
+          and <a href="https://scholar.google.com/citations?user=t7qIyxcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PEOPLE / COLLABORATORS ============ -->
+    <section class="section section-alt people" id="people">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">People &amp; Collaborators</p>
+          <h2>A lab without borders.</h2>
+          <p class="section-intro">
+            The lab's questions are pursued with doctoral students and postdoctoral trainees in the
+            IU Vision Science program, alongside a longstanding network of clinical and engineering
+            partners around the world.
+          </p>
+        </div>
+
+        <div class="collab-grid">
+          <div class="collab reveal"><span class="collab-loc">Bloomington, USA</span><strong>Indiana University School of Optometry</strong><em>Vision Science · home laboratory</em></div>
+          <div class="collab reveal"><span class="collab-loc">Aurora, USA</span><strong>University of Colorado</strong><em>Pharmaceutical Sciences — ocular nanomedicine</em></div>
+          <div class="collab reveal"><span class="collab-loc">Detroit, USA</span><strong>Wayne State University</strong><em>Ophthalmology &amp; Anatomical Sciences</em></div>
+          <div class="collab reveal"><span class="collab-loc">Kyotanabe, Japan</span><strong>Doshisha University</strong><em>Corneal endothelium &amp; regenerative therapy</em></div>
+          <div class="collab reveal"><span class="collab-loc">Chennai, India</span><strong>Sankara Nethralaya</strong><em>Cornea &amp; refractive surgery — clinical imaging</em></div>
+          <div class="collab reveal"><span class="collab-loc">Tumakuru, India</span><strong>Siddaganga Institute of Technology</strong><em>Bio-INvENT Lab — nanoparticles &amp; ML</em></div>
+          <div class="collab reveal"><span class="collab-loc">Phitsanulok, Thailand</span><strong>Naresuan University</strong><em>Ocular drug delivery &amp; optometry</em></div>
+          <div class="collab reveal"><span class="collab-loc">Jaipur, India</span><strong>Amity University Rajasthan</strong><em>Nanobiotechnology &amp; nanomedicine</em></div>
+        </div>
+
+        <div class="join reveal">
+          <div>
+            <h3>Join the lab</h3>
+            <p>
+              We welcome curious students and postdocs — from optometry and vision science to chemical
+              and biomedical engineering, cell biology, and pharmaceutics. If corneal physiology or
+              ocular drug delivery excites you, get in touch.
+            </p>
+          </div>
+          <a class="btn btn-primary js-email" data-user="srinivas" data-domain="iu.edu" data-subject="Joining the SP Lab" href="#">Email Prof. Srinivas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="wrap grid-2">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Get in touch.</h2>
+          <p class="section-intro">
+            For collaborations, prospective students, or questions about the lab's work, reach out
+            directly — we're always glad to talk cornea.
+          </p>
+        </div>
+        <div class="contact-card">
+          <dl>
+            <div><dt>Principal Investigator</dt><dd>Sangly P. Srinivas, Ph.D.</dd></div>
+            <div><dt>Email</dt><dd><a class="js-email" data-user="srinivas" data-domain="iu.edu" href="#">Contact by email &rarr;</a></dd></div>
+            <div><dt>Department</dt><dd>School of Optometry, Indiana University</dd></div>
+            <div><dt>Address</dt><dd>800 East Atwater Avenue<br>Bloomington, IN 47405, USA</dd></div>
+            <div><dt>Profiles</dt><dd>
+              <a href="https://scholar.google.com/citations?user=t7qIyxcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> ·
+              <a href="https://optometry.iu.edu/people-directory/srinivas-sp.html" target="_blank" rel="noopener">IU Profile</a>
+            </dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26">
+            <path d="M16 2.5l11.7 6.75v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="4.2" fill="currentColor"/>
+          </svg>
+        </span>
+        <div>
+          <strong>SP Lab</strong>
+          <span>Corneal Physiology &amp; Ocular Drug Delivery · Indiana University</span>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#research">Research</a>
+        <a href="#pi">PI</a>
+        <a href="#publications">Publications</a>
+        <a href="#people">People</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="wrap footer-legal">
+      <p>© <span id="year">2026</span> SP Lab, Indiana University School of Optometry. All rights reserved.</p>
+      <p class="footer-note">Built for research and education. Publication data via PubMed &amp; Google Scholar.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
